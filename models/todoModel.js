@@ -26,7 +26,7 @@ function findTodoById(id) {
 function update(id, todo) {
   return new Promise((resolve, reject) => {
     const index = todos.findIndex((item) => item.id === id)
-    todos[index] = { ...todo }
+    todos[index] = {id, ...todo }
     writeDataToFile('./data/todos.json', todos)
     resolve(todos)
   })
