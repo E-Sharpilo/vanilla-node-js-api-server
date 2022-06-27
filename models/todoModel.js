@@ -12,7 +12,7 @@ function create(todo) {
     const newTodo = { ...todo }
     todos.push(newTodo)
     writeDataToFile('./data/todos.json', todos)
-    resolve(todos)
+    resolve(newTodo)
   })
 }
 

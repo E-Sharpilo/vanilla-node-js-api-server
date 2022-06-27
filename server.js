@@ -17,6 +17,7 @@ const server = http.createServer((req, res) => {
     res.end()
   } else {
     if (req.url === '/myapi/todos' && req.method === 'GET') {
+      console.log('get');
       getTodos(req, res)
     } else if (req.url === '/myapi/todos' && req.method === 'POST') {
       createTodo(req, res)
