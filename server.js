@@ -17,12 +17,11 @@ const server = http.createServer((req, res) => {
     res.end()
   } else {
     if (req.url === '/myapi/todos' && req.method === 'GET') {
-      console.log('get');
       getTodos(req, res)
     } else if (req.url === '/myapi/todos' && req.method === 'POST') {
       createTodo(req, res)
     } else if (req.url.match(/\/myapi\/todos\/([0-9]+)/) && req.method === 'PUT') {
-      console.log('PUT');
+      console.log('put');
       const id = req.url.split('/')[3]
       updateTodo(req, res, id)
     } else if (req.url.match(/\/myapi\/todos\/([0-9]+)/) && req.method === 'DELETE') {
