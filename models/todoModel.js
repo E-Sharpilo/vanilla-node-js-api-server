@@ -12,7 +12,7 @@ function create(todo) {
     const newTodo = { ...todo }
     todos.push(newTodo)
     writeDataToFile('./data/todos.json', todos)
-    resolve(todos)
+    resolve(newTodo)
   })
 }
 
@@ -28,7 +28,7 @@ function update(id, todo) {
     const index = todos.findIndex((item) => item.id === id)
     todos[index] = {id, ...todo }
     writeDataToFile('./data/todos.json', todos)
-    resolve(todos)
+    resolve(todos[index])
   })
 }
 

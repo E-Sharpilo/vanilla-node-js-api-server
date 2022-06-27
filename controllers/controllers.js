@@ -60,10 +60,9 @@ async function updateTodo(req, res, id) {
       res.end(JSON.stringify({ message: 'Todo not found' }))
     } else {
       const body = await getRequestBody(req)
-      const { title, completed } = JSON.parse(body)
       const tempTodo = {
-        title,
-        completed
+        ...todo,
+        ...JSON.parse(body)
       }
 
       const updTodo = await Todos.update(id, tempTodo)
